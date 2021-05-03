@@ -27,7 +27,8 @@
 #define VIDEO_RENDERER_H
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 #include <stdint.h>
@@ -35,21 +36,22 @@ extern "C" {
 #include "../lib/logger.h"
 #include "../lib/raop_ntp.h"
 
-typedef enum background_mode_e {
-    BACKGROUND_MODE_ON,   // Always show background
-    BACKGROUND_MODE_AUTO, // Only show background while there's an active connection
-    BACKGROUND_MODE_OFF   // Never show background
-} background_mode_t;
+    typedef enum background_mode_e
+    {
+        BACKGROUND_MODE_ON,   // Always show background
+        BACKGROUND_MODE_AUTO, // Only show background while there's an active connection
+        BACKGROUND_MODE_OFF   // Never show background
+    } background_mode_t;
 
-typedef struct video_renderer_s video_renderer_t;
+    typedef struct video_renderer_s video_renderer_t;
 
-video_renderer_t *video_renderer_init(logger_t *logger, background_mode_t background_mode, bool low_latency);
-void video_renderer_start(video_renderer_t *renderer);
-void video_renderer_render_buffer(video_renderer_t *renderer, raop_ntp_t *ntp, unsigned char* data, int data_len, uint64_t pts, int type);
-void video_renderer_flush(video_renderer_t *renderer);
-void video_renderer_destroy(video_renderer_t *renderer);
+    video_renderer_t *video_renderer_init(logger_t *logger, background_mode_t background_mode, bool low_latency);
+    void video_renderer_start(video_renderer_t *renderer);
+    void video_renderer_render_buffer(video_renderer_t *renderer, raop_ntp_t *ntp, unsigned char *data, int data_len, uint64_t pts, int type);
+    void video_renderer_flush(video_renderer_t *renderer);
+    void video_renderer_destroy(video_renderer_t *renderer);
 
-/**
+    /**
  * Update background according to background mode and connection activity
  * @param renderer
  * @param type visit type.
@@ -57,7 +59,7 @@ void video_renderer_destroy(video_renderer_t *renderer);
  *        1: a new connection come
  *       -1: a connection lost
  */
-void video_renderer_update_background(video_renderer_t *renderer, int type);
+    void video_renderer_update_background(video_renderer_t *renderer, int type);
 
 #ifdef __cplusplus
 }
