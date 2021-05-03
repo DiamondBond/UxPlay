@@ -21,7 +21,5 @@ sudo apt-get install gstreamer1.0-vaapi # For Intel graphics
 mkdir build
 cd build
 cmake ..
-# Alternatively (for higher optimization level and/or installation):
-# cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=path/to/install/dir
 make
 ```
