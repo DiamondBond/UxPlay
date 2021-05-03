@@ -1,7 +1,7 @@
 This project is an early stage prototype of unix AirPlay server.
-Work is based on https://github.com/FD-/RPiPlay.
-Tested on Ubuntu 19.10 desktop.
-5G Wifi connection is the must.
+Work is based on https://github.com/antimof/UxPlay with the following PR's merged (& some code style cleanup):
+https://github.com/antimof/UxPlay/pull/42
+https://github.com/antimof/UxPlay/pull/31
 
 ## Features
 
